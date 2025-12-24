@@ -24,15 +24,15 @@ export default function Contact() {
   }, []);
 
   return (
-    <section id="contact" className="py-[120px]" ref={sectionRef}>
+    <section id="contact" className="py-16 md:py-[120px]" ref={sectionRef}>
       <div className="container">
-        <div className="glass-thick rounded-3xl max-w-[700px] mx-auto p-16 text-center fade-in">
+        <div className="glass-thick rounded-2xl md:rounded-3xl max-w-[700px] mx-auto p-8 md:p-16 text-center fade-in">
           <p className="section-label" style={{ color: 'var(--apple-blue)' }}>
             Get in Touch
           </p>
           <h2 className="section-title">Let&apos;s build something great together</h2>
           <p
-            className="text-lg mb-6"
+            className="text-base md:text-lg mb-6"
             style={{ color: 'var(--content-secondary)' }}
           >
             Whether you want to learn more about our products, explore partnership
@@ -45,7 +45,7 @@ export default function Contact() {
           </div>
 
           <a
-            href="mailto:hello@epicsoftwarelabs.com"
+            href="mailto:info@epicsoftwarelabs.com"
             className="btn-primary text-lg py-[18px] px-8"
           >
             <svg
@@ -59,7 +59,7 @@ export default function Contact() {
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
               <polyline points="22,6 12,13 2,6" />
             </svg>
-            hello@epicsoftwarelabs.com
+            info@epicsoftwarelabs.com
           </a>
         </div>
       </div>

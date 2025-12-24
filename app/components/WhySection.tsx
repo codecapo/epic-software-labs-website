@@ -64,9 +64,9 @@ export default function WhySection() {
   }, []);
 
   return (
-    <section className="section-dark py-[120px]" ref={sectionRef}>
+    <section className="section-dark py-16 md:py-[120px]" ref={sectionRef}>
       <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16">
           <div className="fade-in">
             <p className="section-label" style={{ color: 'var(--apple-purple)' }}>
               Why We Exist
@@ -75,14 +75,14 @@ export default function WhySection() {
               Software should be simple, not complicated.
             </h2>
             <p
-              className="text-lg mb-6"
+              className="text-base md:text-lg mb-6"
               style={{ color: 'var(--content-secondary)' }}
             >
               We started Epic Software Labs because we were tired of bloated software
               with unnecessary features, confusing interfaces, and hidden costs. We
               believe businesses deserve tools that just work.
             </p>
-            <p className="text-lg" style={{ color: 'var(--content-secondary)' }}>
+            <p className="text-base md:text-lg" style={{ color: 'var(--content-secondary)' }}>
               Our mission is to create B2B SaaS products that are powerful yet
               intuitive, feature-rich without being overwhelming, and priced fairly
               for the value they deliver.

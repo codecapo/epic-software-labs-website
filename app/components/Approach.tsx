@@ -55,14 +55,14 @@ export default function Approach() {
   }, []);
 
   return (
-    <section id="approach" className="py-[120px]" ref={sectionRef}>
+    <section id="approach" className="py-16 md:py-[120px]" ref={sectionRef}>
       <div className="container">
-        <div className="text-center max-w-[700px] mx-auto mb-16 fade-in">
+        <div className="text-center max-w-[700px] mx-auto mb-10 md:mb-16 fade-in">
           <p className="section-label" style={{ color: 'var(--apple-teal)' }}>
             Our Approach
           </p>
           <h2 className="section-title">How we build products</h2>
-          <p style={{ color: 'var(--content-secondary)', fontSize: '18px' }}>
+          <p className="text-base md:text-lg" style={{ color: 'var(--content-secondary)' }}>
             A methodical approach to creating software that delivers real value.
           </p>
         </div>

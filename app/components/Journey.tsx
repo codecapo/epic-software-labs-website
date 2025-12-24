@@ -59,14 +59,14 @@ export default function Journey() {
   }, []);
 
   return (
-    <section className="section-dark py-[120px]" ref={sectionRef}>
+    <section className="section-dark py-16 md:py-[120px]" ref={sectionRef}>
       <div className="container">
-        <div className="text-center max-w-[700px] mx-auto mb-16 fade-in">
+        <div className="text-center max-w-[700px] mx-auto mb-10 md:mb-16 fade-in">
           <p className="section-label" style={{ color: 'var(--apple-pink)' }}>
             Our Journey
           </p>
           <h2 className="section-title">Building momentum</h2>
-          <p style={{ color: 'var(--content-secondary)', fontSize: '18px' }}>
+          <p className="text-base md:text-lg" style={{ color: 'var(--content-secondary)' }}>
             From idea to execution, here&apos;s our roadmap.
           </p>
         </div>

@@ -24,7 +24,7 @@ export default function About() {
   }, []);
 
   return (
-    <section id="about" className="py-[120px]" ref={sectionRef}>
+    <section id="about" className="py-16 md:py-[120px]" ref={sectionRef}>
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="fade-in">
@@ -37,14 +37,14 @@ export default function About() {
               not just developers.
             </h2>
             <p
-              className="text-lg mb-6"
+              className="text-base md:text-lg mb-6"
               style={{ color: 'var(--content-secondary)' }}
             >
               Epic Software Labs isn&apos;t your typical software agency. We&apos;re a dedicated
               product house that builds, launches, and grows our own B2B SaaS solutions.
               Every product we create solves real problems for real businesses.
             </p>
-            <p className="text-lg" style={{ color: 'var(--content-secondary)' }}>
+            <p className="text-base md:text-lg" style={{ color: 'var(--content-secondary)' }}>
               We combine deep technical expertise with genuine market understanding to
               create software that businesses actually want to use. Our focus is on
               simplicity, reliability, and delivering genuine value.
@@ -53,7 +53,7 @@ export default function About() {
 
           {/* Floating shapes */}
           <div
-            className="fade-in relative h-[400px]"
+            className="fade-in relative h-[300px] md:h-[400px] hidden md:block"
             style={{ transitionDelay: '0.2s' }}
           >
             <div

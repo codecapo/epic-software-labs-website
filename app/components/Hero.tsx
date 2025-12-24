@@ -32,7 +32,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex items-center py-[120px_0_80px] relative overflow-hidden">
+    <section className="min-h-screen flex items-center pt-24 pb-16 md:pt-[120px] md:pb-20 relative overflow-hidden">
       {/* Background gradients */}
       <div
         className="absolute w-[600px] h-[600px] rounded-full pointer-events-none"
@@ -65,7 +65,7 @@ export default function Hero() {
           <h1
             className="fade-in mt-6"
             style={{
-              fontSize: 'clamp(48px, 8vw, 80px)',
+              fontSize: 'clamp(36px, 8vw, 80px)',
               fontWeight: 700,
               letterSpacing: '-0.03em',
               lineHeight: 1.05,
@@ -79,7 +79,7 @@ export default function Hero() {
           </h1>
 
           <p
-            className="fade-in text-xl max-w-[600px] mb-10"
+            className="fade-in text-base md:text-xl max-w-[600px] mb-8 md:mb-10"
             style={{
               color: 'var(--content-secondary)',
               transitionDelay: '0.2s',
@@ -90,7 +90,7 @@ export default function Hero() {
           </p>
 
           <div
-            className="fade-in flex gap-4 flex-wrap"
+            className="fade-in flex flex-col sm:flex-row gap-3 sm:gap-4"
             style={{ transitionDelay: '0.3s' }}
           >
             <a

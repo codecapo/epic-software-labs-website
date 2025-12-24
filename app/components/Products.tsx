@@ -76,14 +76,14 @@ export default function Products() {
   }, []);
 
   return (
-    <section id="products" className="py-[120px]" ref={sectionRef}>
+    <section id="products" className="py-16 md:py-[120px]" ref={sectionRef}>
       <div className="container">
-        <div className="text-center max-w-[700px] mx-auto mb-16 fade-in">
+        <div className="text-center max-w-[700px] mx-auto mb-10 md:mb-16 fade-in">
           <p className="section-label" style={{ color: 'var(--apple-indigo)' }}>
             Our Products
           </p>
           <h2 className="section-title">Solutions we&apos;ve built</h2>
-          <p style={{ color: 'var(--content-secondary)', fontSize: '18px' }}>
+          <p className="text-base md:text-lg" style={{ color: 'var(--content-secondary)' }}>
             Each product is designed to solve specific business challenges with simplicity
             and elegance.
           </p>

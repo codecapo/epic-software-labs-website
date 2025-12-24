@@ -371,4 +371,134 @@ body {
   .container {
     padding: 0 16px;
   }
+
+  /* Cards and glass elements */
+  .card-glass {
+    padding: 24px;
+    border-radius: 16px;
+  }
+
+  .card-glass:hover {
+    transform: none;
+  }
+
+  .stat-glass {
+    padding: 24px;
+  }
+
+  .stat-glass:hover {
+    transform: none;
+  }
+
+  .glass-thick {
+    padding: 32px 20px;
+  }
+
+  /* Buttons */
+  .btn-primary,
+  .btn-secondary {
+    padding: 12px 20px;
+    font-size: 14px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Typography */
+  .section-title {
+    font-size: clamp(28px, 6vw, 36px);
+    margin-bottom: 16px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    margin-bottom: 12px;
+  }
+
+  /* Process numbers */
+  .process-number {
+    font-size: 36px;
+    margin-bottom: 12px;
+  }
+
+  /* Icon boxes */
+  .icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+  }
+
+  .icon-box svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .icon-box-sm {
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon-box-sm svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Value items */
+  .value-item {
+    gap: 12px;
+  }
+
+  .value-item p {
+    font-size: 13px;
+  }
+
+  /* Badge */
+  .badge {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  /* Product status */
+  .product-status {
+    margin-bottom: 16px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  .card-glass {
+    padding: 20px;
+  }
+
+  .glass-thick {
+    padding: 24px 16px;
+    border-radius: 20px;
+  }
+
+  .section-title {
+    font-size: clamp(24px, 7vw, 32px);
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+}
+
+/* Tablet and up touch improvements */
+@media (hover: none) {
+  .card-glass:hover,
+  .stat-glass:hover {
+    transform: none;
+  }
+
+  .btn-primary:hover,
+  .btn-secondary:hover {
+    transform: none;
+  }
 }
