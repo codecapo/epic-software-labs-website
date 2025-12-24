@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epic Software Labs | B2B SaaS Development House</title>
+    <meta name="description" content="Epic Software Labs builds B2B SaaS products that help businesses grow, automate, and scale. Creators of BookedCalls.ai, TitanCard, and TappShop.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --apple-blue: #0A84FF;
+            --apple-green: #30D158;
+            --apple-indigo: #5E5CE6;
+            --apple-orange: #FF9F0A;
+            --apple-pink: #FF375F;
+            --apple-purple: #BF5AF2;
+            --apple-teal: #64D2FF;
+            --apple-yellow: #FFD60A;
+            --surface-primary: #000000;
+            --surface-secondary: #1C1C1E;
+            --surface-tertiary: #2C2C2E;
+            --content-primary: #FFFFFF;
+            --content-secondary: rgba(255, 255, 255, 0.6);
+            --content-muted: rgba(255, 255, 255, 0.3);
+            --border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            background: var(--surface-primary);
+            color: var(--content-primary);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 4px; }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Glass Effects */
+        .glass-thin {
+            background: rgba(38, 38, 40, 0.65);
+            backdrop-filter: blur(40px) saturate(180%);
+            -webkit-backdrop-filter: blur(40px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .glass-regular {
+            background: linear-gradient(135deg, rgba(44, 44, 46, 0.85) 0%, rgba(28, 28, 30, 0.75) 100%);
+            backdrop-filter: blur(40px) saturate(180%);
+            -webkit-backdrop-filter: blur(40px) saturate(180%);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-thick {
+            background: linear-gradient(135deg, rgba(44, 44, 46, 0.95) 0%, rgba(28, 28, 30, 0.88) 100%);
+            backdrop-filter: blur(60px) saturate(200%);
+            -webkit-backdrop-filter: blur(60px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        }
+
+        .card-glass {
+            background: linear-gradient(135deg, rgba(44, 44, 46, 0.9) 0%, rgba(28, 28, 30, 0.8) 100%);
+            backdrop-filter: blur(40px) saturate(180%);
+            -webkit-backdrop-filter: blur(40px) saturate(180%);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+            border-radius: 20px;
+            padding: 32px;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+        }
+
+        .card-glass:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 12px 48px rgba(0,0,0,0.3);
+        }
+
+        .stat-glass {
+            background: linear-gradient(135deg, rgba(44, 44, 46, 0.95) 0%, rgba(28, 28, 30, 0.85) 100%);
+            backdrop-filter: blur(40px) saturate(180%);
+            -webkit-backdrop-filter: blur(40px) saturate(180%);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 32px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .stat-glass:hover {
+            transform: translateY(-4px) scale(1.01);
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background: linear-gradient(180deg, #4da6ff 0%, #0A84FF 50%, #0070e0 100%);
+            box-shadow: 0 4px 12px rgba(10,132,255,0.3), inset 0 1px 0 rgba(255,255,255,0.25);
+            border: none;
+            border-radius: 12px;
+            padding: 14px 28px;
+            color: white;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(10,132,255,0.4), inset 0 1px 0 rgba(255,255,255,0.25);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, rgba(58,58,60,0.9) 0%, rgba(44,44,46,0.8) 100%);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 14px 28px;
+            color: white;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255,255,255,0.2);
+        }
+
+        /* Badge */
+        .badge {
+            background: rgba(58, 58, 60, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 100px;
+            padding: 8px 16px;
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .badge-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Typography */
+        .section-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--apple-blue) 0%, var(--apple-indigo) 50%, var(--apple-green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 16px 0;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(38, 38, 40, 0.65);
+            backdrop-filter: blur(40px) saturate(180%);
+            -webkit-backdrop-filter: blur(40px) saturate(180%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--content-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--content-primary);
+        }
+
+        .nav-cta {
+            padding: 10px 20px !important;
+            font-size: 14px !important;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .hero-bg-1 {
+            background: var(--apple-blue);
+            top: -200px;
+            left: 20%;
+        }
+
+        .hero-bg-2 {
+            background: var(--apple-indigo);
+            bottom: -100px;
+            right: 10%;
+            width: 400px;
+            height: 400px;
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 80px);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+            margin-bottom: 24px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--content-secondary);
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* Sections */
+        section {
+            padding: 120px 0;
+        }
+
+        .section-dark {
+            background: var(--surface-secondary);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 64px;
+        }
+
+        .section-header p {
+            color: var(--content-secondary);
+            font-size: 18px;
+        }
+
+        /* Grid layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+        }
+
+        /* Icon containers */
+        .icon-box {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .icon-box svg {
+            width: 28px;
+            height: 28px;
+            stroke: white;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .icon-box-sm {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-box-sm svg {
+            width: 24px;
+            height: 24px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* Product cards */
+        .product-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 100px;
+            margin-bottom: 24px;
+        }
+
+        .product-status .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+        }
+
+        .product-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--apple-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: gap 0.2s ease;
+        }
+
+        .product-link:hover {
+            gap: 12px;
+        }
+
+        .product-link svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* Values */
+        .value-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .value-item h4 {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .value-item p {
+            font-size: 14px;
+            color: var(--content-muted);
+        }
+
+        /* Process steps */
+        .process-number {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+        }
+
+        .timeline-item {
+            margin-bottom: 48px;
+        }
+
+        .timeline-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .timeline-item h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .timeline-item p {
+            color: var(--content-muted);
+        }
+
+        /* Contact */
+        .contact-card {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 64px;
+            text-align: center;
+        }
+
+        .contact-btn {
+            font-size: 18px;
+            padding: 18px 32px;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 48px 0;
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-copy {
+            color: var(--content-muted);
+            font-size: 14px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--content-muted);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--content-primary);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Floating shapes */
+        .shapes-container {
+            position: relative;
+            height: 400px;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 20px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape-1 {
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(135deg, var(--apple-blue), var(--apple-indigo));
+            top: 0;
+            left: 32px;
+            box-shadow: 0 0 60px rgba(10,132,255,0.3);
+        }
+
+        .shape-2 {
+            width: 140px;
+            height: 140px;
+            background: linear-gradient(135deg, var(--apple-green), var(--apple-teal));
+            bottom: 64px;
+            right: 32px;
+            animation-delay: -2s;
+            box-shadow: 0 0 60px rgba(48,209,88,0.3);
+        }
+
+        .shape-3 {
+            width: 110px;
+            height: 110px;
+            background: linear-gradient(135deg, var(--apple-orange), var(--apple-yellow));
+            top: 50%;
+            right: 30%;
+            animation-delay: -4s;
+            box-shadow: 0 0 60px rgba(255,159,10,0.3);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+
+            .contact-card {
+                padding: 40px 24px;
+            }
+
+            footer .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-left {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Navigation -->
+<nav id="nav">
+    <div class="container">
+        <a href="#" class="logo">Epic Software Labs</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#approach">Approach</a></li>
+            <li><a href="#contact" class="btn-primary nav-cta">Get in Touch</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-bg hero-bg-1"></div>
+    <div class="hero-bg hero-bg-2"></div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="badge fade-in">
+                <span class="badge-dot" style="background: var(--apple-green);"></span>
+                Building the future of B2B SaaS
+            </div>
+            <h1 class="fade-in" style="transition-delay: 0.1s;">
+                We build software<br>
+                <span class="gradient-text">that scales.</span>
+            </h1>
+            <p class="fade-in" style="transition-delay: 0.2s;">
+                Epic Software Labs is a product-focused development house creating B2B SaaS solutions that help businesses grow, automate, and thrive.
+            </p>
+            <div class="hero-cta fade-in" style="transition-delay: 0.3s;">
+                <a href="#products" class="btn-primary">
+                    Explore Our Products
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="#about" class="btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about">
+    <div class="container">
+        <div class="grid-2">
+            <div class="fade-in">
+                <p class="section-label" style="color: var(--apple-blue);">Who We Are</p>
+                <h2 class="section-title">Product builders,<br>not just developers.</h2>
+                <p style="font-size: 18px; color: var(--content-secondary); margin-bottom: 24px;">
+                    Epic Software Labs isn't your typical software agency. We're a dedicated product house that builds, launches, and grows our own B2B SaaS solutions. Every product we create solves real problems for real businesses.
+                </p>
+                <p style="font-size: 18px; color: var(--content-secondary);">
+                    We combine deep technical expertise with genuine market understanding to create software that businesses actually want to use. Our focus is on simplicity, reliability, and delivering genuine value.
+                </p>
+            </div>
+            <div class="shapes-container fade-in" style="transition-delay: 0.2s;">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- What We Do Section -->
+<section class="section-dark">
+    <div class="container">
+        <div class="section-header fade-in">
+            <p class="section-label" style="color: var(--apple-green);">What We Do</p>
+            <h2 class="section-title">Crafting SaaS solutions for modern businesses</h2>
+            <p>We identify gaps in the market and build focused, elegant solutions that address specific business needs without unnecessary complexity.</p>
+        </div>
+        <div class="grid-3">
+            <div class="stat-glass fade-in">
+                <div class="icon-box" style="background: linear-gradient(135deg, var(--apple-blue), var(--apple-indigo)); margin: 0 auto 20px;">
+                    <svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M21 12a9 9 0 0 0-9-9 9 9 0 0 0-9 9c0 4 3.5 6.5 5 8 .5.5.5 1 .5 2h7c0-1 0-1.5.5-2 1.5-1.5 5-4 5-8z"/></svg>
+                </div>
+                <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 12px;">Ideate</h3>
+                <p style="color: var(--content-muted); font-size: 14px;">We identify real market problems and validate solutions before writing a single line of code.</p>
+            </div>
+            <div class="stat-glass fade-in" style="transition-delay: 0.1s;">
+                <div class="icon-box" style="background: linear-gradient(135deg, var(--apple-green), var(--apple-teal)); margin: 0 auto 20px;">
+                    <svg viewBox="0 0 24 24"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+                </div>
+                <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 12px;">Build</h3>
+                <p style="color: var(--content-muted); font-size: 14px;">We develop robust, scalable products with clean architecture and modern technology stacks.</p>
+            </div>
+            <div class="stat-glass fade-in" style="transition-delay: 0.2s;">
+                <div class="icon-box" style="background: linear-gradient(135deg, var(--apple-orange), var(--apple-yellow)); margin: 0 auto 20px;">
+                    <svg viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09zM12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+                </div>
+                <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 12px;">Scale</h3>
+                <p style="color: var(--content-muted); font-size: 14px;">We continuously improve and grow our products based on real user feedback and data.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Products Section -->
+<section id="products">
+    <div class="container">
+        <div class="section-header fade-in">
+            <p class="section-label" style="color: var(--apple-indigo);">Our Products</p>
+            <h2 class="section-title">Solutions we've built</h2>
+            <p>Each product is designed to solve specific business challenges with simplicity and elegance.</p>
+        </div>
+        <div class="grid-3">
+            <!-- BookedCalls -->
+            <div class="card-glass fade-in">
+                <div class="product-status badge" style="background: rgba(48,209,88,0.15); color: var(--apple-green);">
+                    <span class="dot" style="background: var(--apple-green);"></span>
+                    Live
+                </div>
+                <div class="icon-box" style="background: linear-gradient(135deg, var(--apple-blue), var(--apple-indigo));">
+                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 12px;">BookedCalls.ai</h3>
+                <p style="color: var(--content-muted); margin-bottom: 24px;">
+                    Intelligent scheduling and booking automation for businesses. Streamline your calendar, reduce no-shows, and convert more leads into booked appointments.
+                </p>
+                <a href="https://www.bookedcalls.ai/" target="_blank" class="product-link">
+                    Visit Product
+                    <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </a>
+            </div>
+
+            <!-- TitanCard -->
+            <div class="card-glass fade-in" style="transition-delay: 0.1s;">
+                <div class="product-status badge" style="background: rgba(48,209,88,0.15); color: var(--apple-green);">
+                    <span class="dot" style="background: var(--apple-green);"></span>
+                    Live
+                </div>
+                <div class="icon-box" style="background: linear-gradient(135deg, var(--apple-green), var(--apple-teal));">
+                    <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                </div>
+                <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 12px;">TitanCard</h3>
+                <p style="color: var(--content-muted); margin-bottom: 24px;">
+                    Digital business cards reimagined. Create stunning, shareable digital profiles that make lasting first impressions and capture leads effortlessly.
+                </p>
+                <a href="https://titancard.me/" target="_blank" class="product-link">
+                    Visit Product
+                    <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </a>
+            </div>
+
+            <!-- TappShop -->
+            <div class="card-glass fade-in" style="transition-delay: 0.2s;">
+                <div class="product-status badge" style="background: rgba(255,159,10,0.15); color: var(--apple-orange);">
+                    <span class="dot" style="background: var(--apple-orange);"></span>
+                    2026
+                </div>
+                <div class="icon-box" style="background: linear-gradient(135deg, var(--apple-orange), var(--apple-yellow));">
+                    <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></svg>
+                </div>
+                <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 12px;">TappShop</h3>
+                <p style="color: var(--content-muted); margin-bottom: 24px;">
+                    The link-in-bio e-commerce platform for non-physical goods. Perfect for SMBs, consultants, and freelancers to monetise their links with a simple, no-gimmick storefront.
+                </p>
+                <a href="https://tappshop.me/" target="_blank" class="product-link">
+                    Coming Soon
+                    <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Section -->
+<section class="section-dark">
+    <div class="container">
+        <div class="grid-2">
+            <div class="fade-in">
+                <p class="section-label" style="color: var(--apple-purple);">Why We Exist</p>
+                <h2 class="section-title">Software should be simple, not complicated.</h2>
+                <p style="font-size: 18px; color: var(--content-secondary); margin-bottom: 24px;">
+                    We started Epic Software Labs because we were tired of bloated software with unnecessary features, confusing interfaces, and hidden costs. We believe businesses deserve tools that just work.
+                </p>
+                <p style="font-size: 18px; color: var(--content-secondary);">
+                    Our mission is to create B2B SaaS products that are powerful yet intuitive, feature-rich without being overwhelming, and priced fairly for the value they deliver.
+                </p>
+            </div>
+            <div class="fade-in" style="transition-delay: 0.2s;">
+                <div class="glass-regular" style="border-radius: 16px; padding: 24px; margin-bottom: 16px;">
+                    <div class="value-item">
+                        <div class="icon-box-sm" style="background: rgba(10,132,255,0.2); color: var(--apple-blue);">
+                            <svg viewBox="0 0 24 24"><path d="M12 3l1.5 4.5H18l-3.5 2.5 1.5 4.5-4-3-4 3 1.5-4.5L6 7.5h4.5L12 3zM5 19h14M5 22h14"/></svg>
+                        </div>
+                        <div>
+                            <h4>Simplicity First</h4>
+                            <p>We strip away the unnecessary to focus on what truly matters for your business.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-regular" style="border-radius: 16px; padding: 24px; margin-bottom: 16px;">
+                    <div class="value-item">
+                        <div class="icon-box-sm" style="background: rgba(48,209,88,0.2); color: var(--apple-green);">
+                            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                        </div>
+                        <div>
+                            <h4>Reliability</h4>
+                            <p>Our products are built to be dependable. When you need them, they work.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-regular" style="border-radius: 16px; padding: 24px;">
+                    <div class="value-item">
+                        <div class="icon-box-sm" style="background: rgba(255,159,10,0.2); color: var(--apple-orange);">
+                            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </div>
+                        <div>
+                            <h4>User-Centric</h4>
+                            <p>Every decision we make starts with the question: how does this help our users?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Approach Section -->
+<section id="approach">
+    <div class="container">
+        <div class="section-header fade-in">
+            <p class="section-label" style="color: var(--apple-teal);">Our Approach</p>
+            <h2 class="section-title">How we build products</h2>
+            <p>A methodical approach to creating software that delivers real value.</p>
+        </div>
+        <div class="grid-4">
+            <div class="glass-regular fade-in" style="border-radius: 20px; padding: 24px;">
+                <div class="process-number" style="color: var(--apple-blue);">01</div>
+                <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 8px;">Research</h3>
+                <p style="font-size: 14px; color: var(--content-muted);">Deep dive into market needs, competitor analysis, and user pain points.</p>
+            </div>
+            <div class="glass-regular fade-in" style="border-radius: 20px; padding: 24px; transition-delay: 0.1s;">
+                <div class="process-number" style="color: var(--apple-green);">02</div>
+                <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 8px;">Design</h3>
+                <p style="font-size: 14px; color: var(--content-muted);">User-first design that prioritises clarity, efficiency, and delight.</p>
+            </div>
+            <div class="glass-regular fade-in" style="border-radius: 20px; padding: 24px; transition-delay: 0.2s;">
+                <div class="process-number" style="color: var(--apple-orange);">03</div>
+                <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 8px;">Develop</h3>
+                <p style="font-size: 14px; color: var(--content-muted);">Clean, scalable code built with modern frameworks and best practices.</p>
+            </div>
+            <div class="glass-regular fade-in" style="border-radius: 20px; padding: 24px; transition-delay: 0.3s;">
+                <div class="process-number" style="color: var(--apple-purple);">04</div>
+                <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 8px;">Iterate</h3>
+                <p style="font-size: 14px; color: var(--content-muted);">Continuous improvement driven by real user feedback and data.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Journey Section -->
+<section class="section-dark">
+    <div class="container">
+        <div class="section-header fade-in">
+            <p class="section-label" style="color: var(--apple-pink);">Our Journey</p>
+            <h2 class="section-title">Building momentum</h2>
+            <p>From idea to execution, here's our roadmap.</p>
+        </div>
+        <div class="timeline" style="max-width: 600px; margin: 0 auto;">
+            <div class="timeline-item fade-in">
+                <div class="timeline-badge badge" style="background: rgba(10,132,255,0.15); color: var(--apple-blue);">Launched</div>
+                <h3>BookedCalls.ai</h3>
+                <p>Our first product, helping businesses automate their booking and scheduling workflows.</p>
+            </div>
+            <div class="timeline-item fade-in" style="transition-delay: 0.1s;">
+                <div class="timeline-badge badge" style="background: rgba(48,209,88,0.15); color: var(--apple-green);">Launched</div>
+                <h3>TitanCard</h3>
+                <p>Digital business cards that make networking modern and effortless.</p>
+            </div>
+            <div class="timeline-item fade-in" style="transition-delay: 0.2s;">
+                <div class="timeline-badge badge" style="background: rgba(255,159,10,0.15); color: var(--apple-orange);">2026</div>
+                <h3>TappShop</h3>
+                <p>Link-in-bio commerce for non-physical goods. Think TikTok Shop, but for digital products and services.</p>
+            </div>
+            <div class="timeline-item fade-in" style="transition-delay: 0.3s;">
+                <div class="timeline-badge badge" style="background: rgba(191,90,242,0.15); color: var(--apple-purple);">Future</div>
+                <h3>What's Next?</h3>
+                <p>We're always exploring new ideas. Got a problem that needs solving? Let's talk.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <div class="container">
+        <div class="glass-thick contact-card fade-in" style="border-radius: 24px;">
+            <p class="section-label" style="color: var(--apple-blue);">Get in Touch</p>
+            <h2 class="section-title">Let's build something great together</h2>
+            <p style="font-size: 18px; color: var(--content-secondary); margin-bottom: 40px;">
+                Whether you want to learn more about our products, explore partnership opportunities, or just say hello — we'd love to hear from you.
+            </p>
+            <a href="mailto:hello@epicsoftwarelabs.com" class="btn-primary contact-btn">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                hello@epicsoftwarelabs.com
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-left">
+            <span class="logo">Epic Software Labs</span>
+            <span class="footer-copy">© 2025 All rights reserved.</span>
+        </div>
+        <ul class="footer-links">
+            <li><a href="https://www.bookedcalls.ai/" target="_blank">BookedCalls</a></li>
+            <li><a href="https://titancard.me/" target="_blank">TitanCard</a></li>
+            <li><a href="https://tappshop.me/" target="_blank">TappShop</a></li>
+        </ul>
+    </div>
+</footer>
+
+<script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Fade in on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
